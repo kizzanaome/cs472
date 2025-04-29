@@ -1,0 +1,20 @@
+body{
+    background-color: white;
+    color:black;
+    
+}
+.qualities{
+    color: purple;
+}
+h1{
+    font-weight: bold;
+}
+.moods{
+    display: flex;
+}
+img{
+    width: 400px;
+}
+.sad>img{
+    height: 400px;
+}
