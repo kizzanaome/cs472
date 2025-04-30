@@ -1,20 +1,63 @@
-body{
-    background-color: white;
-    color:black;
-    
+body {
+    background-color: wheat;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
-.qualities{
-    color: purple;
-}
-h1{
+
+.qualities {
+    color: blue;
     font-weight: bold;
 }
-.moods{
+
+h1,
+h2 {
+    font-weight: bold;
+    color: indigo;
+}
+
+.moods {
     display: flex;
+    gap: 20px;
+
+
 }
-img{
-    width: 400px;
+
+.moods img {
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
 }
-.sad>img{
-    height: 400px;
+
+
+.sad>img {
+    height: 300px;
+}
+
+.moods p {
+    font-size: 30px;
+    font-weight: bold;
+    font-size: 90px;
+}
+
+.yellow-icon {
+    color: #FFD93B;
+}
+
+.smile {
+    margin-bottom: -10px;
+}
+
+.validate-btns {
+    align-items: center;
+
+}
+
+.buttons {
+    border: 1px solid red;
+}
+
+.buttons img {
+    height: 30px;
 }
