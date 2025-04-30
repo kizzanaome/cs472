@@ -61,3 +61,21 @@ h2 {
 .buttons img {
     height: 30px;
 }
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+p::first-letter{
+    font-size:150%;
+}
+
+.contact-form{
+    border: 1px solid black;
+    margin-top: 3px;
+    width: 50%;
+}
