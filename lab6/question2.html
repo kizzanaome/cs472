@@ -1,0 +1,57 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+
+            function Student(firstName,lastName){ 
+                this.firstName = firstName
+                this.lastName=lastName
+                grades=[]
+
+                this.inputNewGrade = function(newGrade) {
+                    this.grades.push(newGrade);
+                };
+                this.computeAverageGrade = function() {
+                if (this.grades.length === 0) return 0;
+                let sum = this.grades.reduce((acc, grade) => acc + grade, 0);
+                return sum / this.grades.length;
+  };
+
+            }
+
+            // Create multiple students using the constructor
+            const student1 = new Student("Alice", "Smith");
+            student1.inputNewGrade(85);
+            student1.inputNewGrade(90);
+
+            const student2 = new Student("Bob", "Johnson");
+            student2.inputNewGrade(78);
+            student2.inputNewGrade(82);
+            student2.inputNewGrade(88);
+
+            const student3 = new Student("Charlie", "Brown");
+            student3.inputNewGrade(92);
+            student3.inputNewGrade(95);
+
+
+            // Add all students to an array
+            const students = [student1, student2, student3];
+
+            // Compute average grade for all students
+            let totalGrades = 0;
+            let totalCount = 0;
+
+            students.forEach(student => {
+            totalGrades += student.grades.reduce((sum, grade) => sum + grade, 0);
+            totalCount += student.grades.length;
+            });
+
+            const overallAverage = totalCount === 0 ? 0 : totalGrades / totalCount;
+
+            console.log("Average grade for all students:", overallAverage.toFixed(2));
+
+
+        </script>
+    </body>
+</html>

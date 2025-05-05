@@ -1,0 +1,58 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            // Animal Constructor
+            function Animal(name, speed){
+                this.name = name
+                this.speed = speed
+                this.run = function(speed){
+                }
+                this.comapreBySpeed = function(a1,a2){
+
+                }
+            }
+
+            // run method: increases speed
+              Animal.prototype.run = function(speed){
+                this.speed += speed
+                console.log(`${this.name} runs at ${this.speed} speed.`);
+            }
+
+
+            // Static method: compare speeds
+            Animal.comapreBySpeed = function(a1,a2){
+                return a2.speed - a1.speed;
+
+            }
+
+            function Rabbit(name, speed){
+                //call parent constructor
+                Animal.call(this, name, speed)
+            }
+
+            //inherit animall prototype
+            Rabbit.prototype = Object.create(Animal.prototype)
+            Rabbit.prototype.constructor = Rabbit
+
+
+            // Add hide method to Rabbit
+            Rabbit.prototype.hide = function() {
+            console.log(`${this.name} hides`);
+            };
+
+
+            const rabbit1 = new Rabbit("Thumper", 10);
+            const rabbit2 = new Rabbit("Snowball", 5);
+            // Thumper runs at 15 speed.
+            rabbit1.run(5); 
+            // Snowball hides
+            rabbit2.hide(); 
+
+            // Compare speeds
+            console.log(Animal.compareBySpeed(rabbit1, rabbit2)); // > 0 (Thumper is faster)
+
+        </script>
+    </body>
+</html>

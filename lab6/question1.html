@@ -16,6 +16,46 @@
                 }
 
             }
+            
+            //creating an array with multiple students using OBject.create
+            let students = [];
+            const student1 = Object.create(student);
+            student1.firstName = "Alice";
+            student1.lastName = "Smith";
+            student1.grades = [];
+            student1.inputNewGrade(91);
+            student1.inputNewGrade(90); 
+            
+            const student2 = Object.create(student);
+            student2.firstName ="Bob";
+            student2.lastName ="Johnson";
+            student2.inputNewGrade(78);
+            student2.inputNewGrade(82);
+            student2.inputNewGrade(88)
+
+            const student3 = Object.create(student);
+            student3.firstName ="Nom";
+            student3.lastName ="Kizz";
+            student3.inputNewGrade(98);
+            student3.inputNewGrade(99);
+            student3.inputNewGrade(100);
+
+            //Add students to the array
+            students.push(student1,student2, student3)
+
+            //computing the average grade accross all students
+            let tottalGrades =0;
+            let gradeCount = 0;
+
+            students.forEach(s=>{
+                totalGrades += s.grades.reduce((sum,grade) => sum +grade,0);
+                gradeCount += s.grades.length;
+            })
+
+            const overallAverage = gradeCount === 0 ? 0 : tottalGrades .gradeCount;
+
+            console.log("Average grade for all students:" , overallAverage.toFixed(2));
+
         </script>
     </body>
 </html>
