@@ -1,0 +1,21 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            let student ={
+                firstName: '',
+                lastName:'',
+                grades:[],
+                inputNewGrade: function(newGrade){
+                    return this.grades.push(newGrade)
+                },
+                computeAverageGrade: function(){
+                  let sum =  this. grades.reduce((curr, grade)=> acc + grade,0);
+                  return sum/this.grades.length;
+                }
+
+            }
+        </script>
+    </body>
+</html>
