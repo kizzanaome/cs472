@@ -7,7 +7,7 @@ class Meditation {
         this.inervalId = setInterval(() => {
             console.log(this.countDown--)
             if (this.countDown===0){
-                console.log("...")
+                console.log("Jay Guru Dev")
                 clearInterval(this.inervalId)
             }
         }, 1000)
