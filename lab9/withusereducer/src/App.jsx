@@ -5,7 +5,23 @@ import './App.css'
 import ProductList from './component/ProductList'
 import { useReducer } from 'react';
 
+
+// Reducer function
+function productReducer(state, action) {
+  switch (action.type) {
+    case 'TOGGLE_STOCK':
+      return state.map(product =>
+        product.id === action.payload
+          ? { ...product, inStock: !product.inStock }
+          : product
+      );
+    default:
+      return state;
+  }
+}
+
 function App() {
+
   const data = [
     { id: 1, name: 'Apple', price: 1, inStock: true },
     { id: 2, name: 'Banana', price: 1, inStock: false },
@@ -13,16 +29,13 @@ function App() {
       id: 3, name: 'Cherry'
     }
   ]
-  const [productList, setProductlist] = useState(data)
-
-
+  const [productList, dispatch] = useReducer(productReducer, data);
 
   const toggleStock = (id) => {
-    const updateList = productList.map((product) =>
-      product.id == id ? { ...product, inStock: !product.inStock } : product
-    );
-    setProductlist(updateList)
-  }
+    dispatch({ type: 'TOGGLE_STOCK', payload: id });
+  };
+
+ 
 
 
 
