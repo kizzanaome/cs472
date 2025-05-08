@@ -73,9 +73,9 @@ const addBook = function (title, author, ID) {
 
     if (!exists) {
         const newBook = { title, author, ID };
-        libraryBooks.push({
+        libraryBooks.push(
             newBook
-        })
+        )
         return newBook;
     } else {
         return null;
