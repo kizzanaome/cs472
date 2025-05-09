@@ -1,9 +1,9 @@
-function Book({title,author, id}) {
+function Book({book}) {
     return (
-        <div>
-            <h3>Title :<span>{title}</span></h3>
-            <p>author:<span>{author}</span></p>
-            <p>id:<span>{id}</span></p>
+        <div className="item">
+            <h3>Title :<span>{book.title}</span></h3>
+            <p>author:<span>{book.author}</span></p>
+            <p>id:<span>{book.id}</span></p>
 
         </div>
     )
