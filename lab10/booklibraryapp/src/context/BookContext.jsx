@@ -14,9 +14,17 @@ export const BookProvider = ({ children }) => {
             try {
                 setLoading(true);
                 const result = await fetch(API_URL);
-                if (!result.ok) throw new Error('Failed to fetch');
-                const data = await result.json();
-                setBooks(data);
+                console.log(result)
+                if (!result.ok) {
+                    setError('Failed to fetch books');
+                    // throw new Error('Failed to fetch');
+                } else {
+                    const data = await result.json();
+                    setBooks(data);
+
+                }
+
+
             } catch (err) {
                 setError(err.message);
             } finally {
@@ -50,6 +58,7 @@ export const BookProvider = ({ children }) => {
                 body: JSON.stringify(updatedFields),
             });
             const updated = await response.json();
+            console.log(updated)
             setBooks(prev =>
                 prev.map(book => (book.id === id ? updated : book))
             );

@@ -14,8 +14,7 @@ function BookFormActions() {
         addBook(newBook);
     };
 
-    const handleUpdate = () => {
-        const id = "1";
+    const handleUpdate = (id) => {
         updateBook(id, { title: "Updated Title" });
     };
 

@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useBookContext } from "../context/BookContext";
 
-function BookForm() {
-    const { addBook } = useBookContext();
+function EditBookForm({ book , close}) {
+
+    const { updateBook } = useBookContext();
 
     const [formData, setFormData] = useState({
-        title: "",
-        author: "",
-        description: "",
-        price: ""
+        title: book.title,
+        author: book.author,
+        description: book.description,
+        price: book.price
     });
 
     const handleChange = (e) => {
@@ -27,7 +28,7 @@ function BookForm() {
             return;
         }
 
-        await addBook({
+        await updateBook(book.id,{
             ...formData,
             price: parseFloat(formData.price),
         });
@@ -35,10 +36,11 @@ function BookForm() {
         setFormData({ title: "", author: "", description: "", price: "" });
     };
 
-    return (
-        <form onSubmit={handleSubmit} >
-            <h4 className="title">Add a New Book</h4>
 
+
+    return (
+        <form onSubmit={handleSubmit} className="edit">
+            <h4>Update Book</h4>
             <input
                 className="form-control mb-2"
                 name="title"
@@ -60,7 +62,6 @@ function BookForm() {
             <textarea
                 className="form-control mb-2"
                 name="description"
-                // cols={3}
                 placeholder="Description"
                 value={formData.description}
                 onChange={handleChange}
@@ -77,10 +78,13 @@ function BookForm() {
             />
 
             <button type="submit" className="btn btn-success">
-                Add Book
+                Update Book
             </button>
+
+            <button className="btn-danger" onClick={close}>close</button>
         </form>
-    );
+
+    )
 }
 
-export default BookForm;
+export default EditBookForm
