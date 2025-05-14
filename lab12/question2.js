@@ -1,3 +1,6 @@
+
+
+
 const fs = require('fs');
 //you may assume input.txt is in the same folder
 const rd = fs.createReadStream("input.txt");
