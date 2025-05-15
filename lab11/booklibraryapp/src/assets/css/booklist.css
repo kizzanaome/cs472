@@ -1,0 +1,77 @@
+
+.d-flex{
+    display: flex;
+}
+.d-block{
+    display: block;
+}
+.content {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.booklist {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.item {
+    flex: 1 1 22%;
+    box-sizing: border-box;
+    border: 1px solid #d7d7d7;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.small{
+    color: gray;
+}
+
+/* Book Form */
+
+form{
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    margin-right: 10px;
+}
+
+form.edit{
+    display: block;
+}
+
+.form-control{
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-right:10px;
+}
+
+textarea{
+height: 17px;
+}
+
+button{
+    padding: 10px;
+    background-color:#7651DD;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    margin-right: 5px;
+}
+
+button.btn-success{
+    background-color: green;
+}
+
+button.btn-danger{
+    background-color: rgba(255, 0, 0, 0.686);
+}
+
+
