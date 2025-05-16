@@ -5,11 +5,6 @@ import { useParams } from "react-router";
 
 function EditBookForm({ close }) {
     const { id, title, author, description, price } = useParams();
-    console.log(id)
-    console.log(title)
-    console.log(author)
-    console.log(description)
-    console.log(price)
 
     const { updateBook } = useBookContext();
 
