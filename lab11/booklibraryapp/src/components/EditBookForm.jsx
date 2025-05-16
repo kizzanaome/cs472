@@ -3,8 +3,8 @@ import { useBookContext } from "../context/BookContext";
 import { useParams } from "react-router";
 
 
-function EditBookForm({ book , close}) {
-    const { id, title, author,description, price } = useParams();
+function EditBookForm({ close }) {
+    const { id, title, author, description, price } = useParams();
     console.log(id)
     console.log(title)
     console.log(author)
@@ -36,7 +36,7 @@ function EditBookForm({ book , close}) {
             return;
         }
 
-        await updateBook(id,{
+        await updateBook(id, {
             ...formData,
             price: parseFloat(formData.price),
         });
