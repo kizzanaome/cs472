@@ -1,15 +1,23 @@
 import { useState } from "react";
 import { useBookContext } from "../context/BookContext";
+import { useParams } from "react-router";
+
 
 function EditBookForm({ book , close}) {
+    const { id, title, author,description, price } = useParams();
+    console.log(id)
+    console.log(title)
+    console.log(author)
+    console.log(description)
+    console.log(price)
 
     const { updateBook } = useBookContext();
 
     const [formData, setFormData] = useState({
-        title: book.title,
-        author: book.author,
-        description: book.description,
-        price: book.price
+        title: title,
+        author: author,
+        description: description,
+        price: price
     });
 
     const handleChange = (e) => {
@@ -28,7 +36,7 @@ function EditBookForm({ book , close}) {
             return;
         }
 
-        await updateBook(book.id,{
+        await updateBook(id,{
             ...formData,
             price: parseFloat(formData.price),
         });
@@ -39,7 +47,7 @@ function EditBookForm({ book , close}) {
 
 
     return (
-        <form onSubmit={handleSubmit} className="edit">
+        <form onSubmit={handleSubmit} className=" add-form">
             <h4>Update Book</h4>
             <input
                 className="form-control mb-2"

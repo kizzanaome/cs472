@@ -4,12 +4,14 @@ import './index.css'
 import './assets/css/booklist.css'
 import App from './App.jsx'
 import { BookProvider } from './context/BookContext.jsx'
+import { BrowserRouter } from 'react-router'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BookProvider>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </BookProvider>
-
   </StrictMode>,
 )

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useBookContext } from "../context/BookContext";
+import { useNavigate } from "react-router-dom";
 
 function BookForm() {
     const { addBook } = useBookContext();
@@ -36,7 +37,7 @@ function BookForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit} className="add-form">
             <h4 className="title">Add a New Book</h4>
 
             <input

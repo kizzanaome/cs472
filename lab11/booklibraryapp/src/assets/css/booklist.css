@@ -1,12 +1,13 @@
-
-.d-flex{
+.d-flex {
     display: flex;
 }
-.d-block{
+
+.d-block {
     display: block;
 }
+
 .content {
-    width: 75%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
 
@@ -27,38 +28,39 @@
     border-radius: 5px;
 }
 
-.small{
+.small {
     color: gray;
 }
 
 /* Book Form */
 
-form{
+form {
     display: flex;
     align-items: center;
 }
 
-.title{
+.title {
     margin-right: 10px;
 }
 
-form.edit{
+form.edit {
     display: block;
 }
 
-.form-control{
+.form-control {
     padding: 10px;
     margin-bottom: 15px;
-    margin-right:10px;
+    margin-right: 10px;
 }
 
-textarea{
-height: 17px;
+textarea {
+    height: 17px;
 }
 
-button{
+button,
+.button {
     padding: 10px;
-    background-color:#7651DD;
+    background-color: #7651DD;
     color: white;
     outline: none;
     border: none;
@@ -66,12 +68,50 @@ button{
     margin-right: 5px;
 }
 
-button.btn-success{
+.button {
+    margin-bottom: 10px !important;
+}
+
+button.btn-success {
     background-color: green;
 }
 
-button.btn-danger{
+button.btn-danger {
     background-color: rgba(255, 0, 0, 0.686);
 }
 
+.add-form {
+    display: flex;
+    flex-direction: column;
+}
 
+.header {
+    width: 100%;
+    border-bottom: 1px solid black;
+    height: 50px;
+    margin-bottom: 35px;
+}
+
+.header nav ul {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    list-style: none;
+    margin-top: 35px;
+
+}
+
+.header nav ul a {
+    text-decoration: none;
+    padding: 20px;
+    color: black;
+}
+
+.header nav ul a:hover {
+    color: #7651DD;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
